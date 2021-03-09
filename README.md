@@ -13,7 +13,11 @@ En la algunas ocasiones debido a que Docker puede correr en Hyper-v se puede dar
 
 - SOLUCIÓN1: Panel de control, programas, características de windows y aqui quitar (si aparecen seleccionadas) hyper-v y contenedores.
 - Mediante Windows Powershell ejecutado en administrador 
-  > bcdedit
-  habilitado si hypervisorlaunchtype Auto
-  SOLUCIÓN2: > bcdedit /set hypervisorlaunchtype off
-  la linea anterior lo pone a off, es decir, se deshabilita
+```
+> bcdedit
+```
+Y ver si hypervisorlaunchtype Auto => está habilitado. La SOLUCIÓN2: para deshabilitarlo por linea de comandos sería
+```
+> bcdedit /set hypervisorlaunchtype off
+```
+Finalmente, en cualquier caso hacer un reboot.
